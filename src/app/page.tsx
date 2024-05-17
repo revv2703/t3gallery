@@ -1,36 +1,29 @@
 import Link from "next/link";
 
 export default function HomePage() {
+  
+  const mockUrls = [
+    "https://utfs.io/f/c19283f0-548d-48a8-af4e-e6c1cba3662e-hru0oc.png",
+    "https://utfs.io/f/3b3ce9ac-97a1-4b68-864d-08ea1017f96a-6yp18p.png",
+    "https://utfs.io/f/d31a9b67-1f93-4007-913a-faa0c1aa50c0-74f1pt.png",
+    "https://utfs.io/f/374b1d70-09f7-4290-9a18-23f153ffd57b-n3j07k.png",
+    "https://utfs.io/f/9ffe54b9-5c3d-4d3e-97ff-4426bab9e485-w11kfa.png",
+    "https://utfs.io/f/39cdf897-5135-4f21-b03d-fce423ed9f27-5jr7zm.png"
+  ]
+  
+  const mockImages = mockUrls.map((url, index) => ({
+    id: index + 1,
+    url
+  }))
+  
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
+    <main className="">
+      <div className="flex flex-wrap gap-4">
+        {[...mockImages, ...mockImages, ...mockImages].map((image) => (
+          <div key={image.id} className="w-48">
+            <img src={image.url} />
+          </div>
+        ))}
       </div>
     </main>
   );
