@@ -30,38 +30,85 @@ const useUploadThingInputProps = (...args: Input) => {
   };
 };
 
-function UploadSVG(){
-  return(
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15" />
+function UploadSVG() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="size-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15"
+      />
     </svg>
-  )
+  );
+}
+
+function LoadingSpinnerSVG() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="white"
+    >
+      <rect className="spinner_9Mto" x="1" y="1" rx="1" width="10" height="10" />
+      <rect
+        className="spinner_9Mto spinner_bb12"
+        x="1"
+        y="1"
+        rx="1"
+        width="10"
+        height="10"
+      />
+    </svg>
+  );
 }
 
 
-export function SimpleUploadButton(){
-  const router = useRouter()
-    
-  const {inputProps} = useUploadThingInputProps("imageUploader", {
-    onUploadBegin(){
-      toast("Uploading image(s)...", {
+export function SimpleUploadButton() {
+  const router = useRouter();
+
+  const { inputProps } = useUploadThingInputProps("imageUploader", {
+    onUploadBegin() {
+      toast(
+        <div className="flex items-center gap-1">
+          <LoadingSpinnerSVG /> <span className="text-lg">Uploading image(s)...</span> 
+        </div>, 
+        {
         duration: 1000000,
-        id: "upload-begin"
-      })
+        id: "upload-begin",
+      });
     },
     onClientUploadComplete() {
-      toast.dismiss("upload-begin")
+      toast.dismiss("upload-begin");
       toast("Image(s) uploaded!", {
-        duration: 2000
+        duration: 2000,
       });
-        router.refresh();
+      router.refresh();
     },
   });
-  
-  return(
+
+  return (
     <div className="flex flex-row p-4">
-      <label htmlFor="upload-button" className="flex items-center cursor-pointer">Upload <UploadSVG /></label>
-      <input id="upload-button" type="file" className="sr-only" {...inputProps} />
+      <label
+        htmlFor="upload-button"
+        className="flex cursor-pointer items-center"
+      >
+        Upload <UploadSVG />
+      </label>
+      <input
+        id="upload-button"
+        type="file"
+        className="sr-only"
+        {...inputProps}
+      />
     </div>
-  )
+  );
 }

@@ -1,13 +1,11 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { SimpleUploadButton } from "./upload-button";
 
-
 export function TopNav() {
-  
   return (
     <nav className="flex w-full items-center justify-between border-b p-4 text-xl font-semibold">
       <div>Gallery</div>
-      <div className="flex flex-row gap-2 items-center px-2">
+      <div className="flex flex-row items-center gap-2 px-2">
         <SignedOut>
           <SignInButton />
         </SignedOut>
