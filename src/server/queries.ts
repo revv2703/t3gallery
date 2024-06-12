@@ -15,7 +15,6 @@ export async function getMyImages() {
 }
 
 export async function getImage(id: number) {
-  // 1:39:00
   const user = auth();
 
   if (!user.userId) throw new Error("Unauthorized");

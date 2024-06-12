@@ -7,8 +7,8 @@ export default async function FullPageImageView(props: {id: number}) {
     
     const uploaderInfo = await clerkClient.users.getUser(image.userId);
   return (
-    <div className="flex w-full h-full min-w-0">
-      <div className="flex flex-shrink justify-center items-center">
+    <div className="flex h-full w-screen min-w-0 items-center justify-center text-white">
+      <div className="flex-shrink flex-grow">
         <img src={image.url} className="w-96 object-contain" />
       </div>
       <div className="w-48 flex flex-col flex-shrink-0 border-l">
