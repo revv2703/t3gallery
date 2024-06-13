@@ -14,8 +14,8 @@
 - [x] Routing/image page (parallel route)
 - [x] Setup toasts
 - [x] Analytics (posthog)
-- [ ] Delete button (w/ Server actions)
-- [ ] Ratelimiting (upstash)
+- [x] Delete button (w/ Server actions)
+- [x] Ratelimiting (upstash)
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
