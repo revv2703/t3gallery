@@ -97,6 +97,13 @@ export function SimpleUploadButton() {
       });
       router.refresh();
     },
+    onUploadError(error) {
+      posthog.capture("upload error", { error });
+      toast.dismiss("upload-begin");
+      toast.error("Error uploading image(s)", {
+        duration: 2000,
+      });
+    }
   });
 
   return (
