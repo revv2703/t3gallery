@@ -17,6 +17,15 @@
 - [x] Delete button (w/ Server actions)
 - [x] Ratelimiting (upstash)
 
+## Future goals
+- [x] Fix the page layout for images of different resolutions
+- [ ] "Selecting" images on the gallery
+- [ ] Implement shareability of the images(public/private)
+- [ ] Infinite scroll
+- [ ] Folders/albums
+- [ ] Implement likes and comments
+- [ ] Create explore page for users to view public photos
+
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
 
