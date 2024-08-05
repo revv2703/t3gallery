@@ -41,6 +41,9 @@ dependencies:
   drizzle-orm:
     specifier: ^0.29.4
     version: 0.29.5(@opentelemetry/api@1.9.0)(@types/react@18.3.1)(@vercel/postgres@0.8.0)(pg@8.11.5)(postgres@3.4.4)(react@18.2.0)
+  lucide-react:
+    specifier: ^0.424.0
+    version: 0.424.0(react@18.2.0)
   next:
     specifier: ^14.2.1
     version: 14.2.3(@babel/core@7.24.7)(@opentelemetry/api@1.9.0)(react-dom@18.2.0)(react@18.2.0)
@@ -4626,6 +4629,14 @@ packages:
     dependencies:
       es5-ext: 0.10.64
     dev: true
+
+  /lucide-react@0.424.0(react@18.2.0):
+    resolution: {integrity: sha512-x2Nj2aytk1iOyHqt4hKenfVlySq0rYxNeEf8hE0o+Yh0iE36Rqz0rkngVdv2uQtjZ70LAE73eeplhhptYt9x4Q==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
